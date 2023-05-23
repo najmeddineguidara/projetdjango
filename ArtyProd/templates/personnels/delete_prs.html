@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% block title %} Supprimer un personnel {% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+  <h2>Supprimer un personnel</h2>
+  <p>Êtes-vous sûr de vouloir supprimer ce personnel ?</p>
+  <p>{{ personnel.nom }} {{ personnel.prenom }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a href="{% url 'TtPersonnel' %}" class="btn btn-secondary">Annuler</a>
+  </form>
+</div>
+{% endblock %}
+delete_personneldelete_personnel

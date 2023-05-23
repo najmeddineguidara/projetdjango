@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+{% block title %} {{personnel.libellé}} {% endblock %}
+
+{% block content %}
+
+
+<div class="card" style="width: 400px;margin: 10px; margin-left: 550px;">
+  <div class="card-body">
+    <h5 class="card-title">Personnel</h5>
+    <hr class="dropdown-divider">
+    <img src="{{ personnel.photo.url }}" alt="{{ personnel.nom }}" style="width: 350px; height: 300px;">
+    <hr class="dropdown-divider">
+    <p class="card-text">Nom: <b>{{personnel.nom}}</b></p>
+    <p class="card-text">Prenom: <b>{{personnel.prenom}}</b></p>
+    <p class="card-text">Date Naissance: <b>{{personnel.date_naissance}}</b></p>
+    <p class="card-text"> Profil Linkedin/Site personnel:
+      <b><a href="{{ personnel.profil_linkedin_ou_site_personnel }}">{{ personnel.profil_linkedin_ou_site_personnel
+          }}</a></b>
+    </p>
+    <p class="card-text">Cv:<a href="{{ personnel.cv.url }}">{{ personnel.cv.name }}</a></p>
+    <p class="card-text">Date affectation: {{personnel.date_affectation}}</p>
+    <a href="{% url 'TtPersonnel' %}" class="btn btn-secondary">Retour au list personnels</a>
+  </div>
+</div>
+{% endblock %}

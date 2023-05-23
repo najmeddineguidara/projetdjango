@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+  <h1>Service List</h1>
+  <div class="row">
+    {% for service in services %}
+    <div class="col-lg-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ service.nom }}</h5>
+          <p class="card-text">Description: {{ service.description }}</p>
+          <p class="card-text">Type: {{ service.type }}</p>
+        </div>  
+      </div>
+    </div>
+    {% empty %}
+    <div class="col">
+      <p>No services available.</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<style>
+    .left-align {
+      margin-left: 30%;
+    }
+  </style>
+  
+  <div class="left-align">
+<section id="contact" >
+    <div class="container">
+     
+            <h3 class="title">ajouter projet</h3>
+            <div class="row">
+                <h2></h2> 
+<form method='POST' class="post-form" style="margin-left: 40px;" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="sumit" class="btn btn-dark">Enregistrer</button>
+</form>
+</div></div></section>
+</div>
+{% endblock %}

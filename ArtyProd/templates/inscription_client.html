@@ -1,0 +1,10 @@
+<!-- inscription_client.html -->
+
+<h2>Inscription Client</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">Inscription</button>
+</form>

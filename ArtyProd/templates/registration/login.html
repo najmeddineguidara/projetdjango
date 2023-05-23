@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2 class="card-title">Se connecter</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="{{ form.username.id_for_label }}">Nom d'utilisateur :</label>
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.password.id_for_label }}">Mot de passe :</label>
+                            {{ form.password }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <small>
+        Pas encore inscrit ? <a href="{% url 'register' %}">S'inscrire</a>
+        <br>
+        Mot de passe oublié ?
+    </small>
+</div>
+{% endblock %}

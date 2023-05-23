@@ -1,0 +1,11 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+  <h1>Delete Service</h1>
+  <p>Are you sure you want to delete the service "{{ service.nom }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'TtService' %}">Cancel</a>
+  </form>
+{% endblock %}

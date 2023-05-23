@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+  <h1>Service Details</h1>
+  <h2>{{ service.nom }}</h2>
+  <p>Description: {{ service.description }}</p>
+  <p>Type: {{ service.type }}</p>
+  <a href="{% url 'edit_service' service.id %}">Edit</a>
+  <a href="{% url 'delete_service' service.id %}">Delete</a>
+{% endblock %}

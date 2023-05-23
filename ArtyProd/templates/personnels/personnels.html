@@ -1,0 +1,31 @@
+{% extends 'navbar.html' %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+            {% for personnel in personnels %}
+            {% if forloop.counter0|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                <div class="card" style="width: 20rem;; margin: 30px;">
+                  
+                    {% if personnel.photo %}
+                    <img src="{{ personnel.photo.url }}" alt="{{ personnel.nom }}" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ personnel.nom }}</h5>
+                        <p class="card-text">Date Naissance: <b>{{ personnel.date_naissance }}</b></p>
+                        <p class="card-text">Profil Linkedin/Site personnel: <b>{{ personnel.profil_linkedin_ou_site_personnel }}</b></p>
+                    </div>
+                      
+                </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+

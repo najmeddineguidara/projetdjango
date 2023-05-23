@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+
+
+{% block content %}
+
+      <div class="card" style="width: 400px;margin: 10px; margin-left: 550px;" >
+        <div class="card-body">
+            <h5 class="card-title">Membres Equipe {{ equipe.nom }}</h5>
+            <hr class="dropdown-divider">
+            <p class="card-text">Nom et prenom: <br>
+              <div style="padding-left: 20px;">
+              {% for membre in equipe.membres.all %}
+               <b>{{ membre.nom }} {{ membre.prenom }}</b></p>
+            
+            {% endfor %}
+          </div>
+            <a href="{% url 'list_equipes' %}" class="btn btn-secondary">Retour au list des equipes</a>      
+  </div>
+</div>
+{% endblock %}

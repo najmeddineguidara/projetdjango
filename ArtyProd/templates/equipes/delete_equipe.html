@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+{% block title %} Supprimer une equipe {% endblock %}
+
+{% block content %}
+  <div class="container mt-3">
+    <h2>Supprimer une equipe</h2>
+    <p>Êtes-vous sûr de vouloir supprimer ce personnel ?</p>
+    <p>{{ equipe.nom }} </p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Supprimer</button>
+      <a href="{% url 'list_equipes' %}" class="btn btn-secondary">Annuler</a>
+    </form>
+  </div>
+{% endblock %}
